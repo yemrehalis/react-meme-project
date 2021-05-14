@@ -1,0 +1,11 @@
+.container {
+    margin-top: 50px;
+}
+
+.skip {
+    background-color: rgb(253, 149, 30);
+}
+
+.generate {
+    background-color: rgb(30, 119, 253);
+}
