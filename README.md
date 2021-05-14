@@ -2,6 +2,6 @@
 
 ####  
 -  Clone this repo  `git clone https://github.com/yemrehalis/react-meme-project.git`
--  `cd` react-meme_project
+-  `cd` react-meme-project
 -  run `npm install`
 -  run `npm start`
