@@ -7,6 +7,24 @@ export const Meme = () => {
     const [memeIndex, setMemeIndex] = useState(0);
     const [captions, setCaptions] = useState([]);
 
+
+
+    const updateCaption = (e, index) => {
+
+        const text = e.target.value || '';
+        setCaptions(
+            captions.map((c, i) => {
+                if (index === i) {
+                    return text;
+                } else {
+                    return c;
+                }
+            })
+        );
+    };
+
+
+
     const shuffleMemes = (array) => {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * i);
@@ -25,9 +43,7 @@ export const Meme = () => {
         }));
     }, []);
 
-    useEffect(() => {
-        console.log(captions);
-    }, [captions])
+
 
 
 
@@ -37,12 +53,25 @@ export const Meme = () => {
         }
     }, [memeIndex, memes]);
 
+
+    useEffect(() => {
+        console.log(captions);
+    }, [captions]);
+
     return (
 
         memes.length ?
             <div className={styles.container}>
                 <button onClick={() => console.log('generate')} className={styles.generate} >Generate</button>
                 <button onClick={() => setMemeIndex(memeIndex + 1)} className={styles.skip} >Skip</button>
+
+                {
+                    captions.map((c, index) => (
+                        <input onChange={(e) => updateCaption(e, index)} key={index} />
+                    ))
+
+
+                }
                 <img src={memes[memeIndex].url} alt="" />
 
             </div> :
