@@ -1,0 +1,17 @@
+.container {
+    margin-top: 20px;
+}
+
+.home {
+    background-color: rgb(253, 149, 30);
+}
+
+.copy {
+    margin-top: 30px;
+    background-color: rgb(30, 119, 253);
+}
+
+.note {
+    text-align: center;
+    font-weight: 400;
+}
